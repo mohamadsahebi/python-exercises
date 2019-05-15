@@ -1,0 +1,1000 @@
+  561  ll
+  562  git status 
+  563  cd ..
+  564  ll
+  565  cd new-espard-website/
+  566  git status 
+  567  cd ..
+  568  ll
+  569  cd new-spard/
+  570  git status 
+  571  cd ..
+  572  cd new-espard-website/
+  573  git status 
+  574  ll
+  575  git add .
+  576  git add --all
+  577  git status 
+  578  git commit -m "edit docker-compose"
+  579  git status 
+  580  git remote -v
+  581  git push origin master 
+  582  git status 
+  583  cd ..
+  584  ll
+  585  cd new-spard/
+  586  git status 
+  587  git add .
+  588  git status 
+  589  git commit -m "edit docker-compose"
+  590  git status 
+  591  git push origin master
+  592  git remote -v
+  593  git status 
+  594  cd ..
+  595  ll
+  596  cd new-tfi/
+  597  ll
+  598  git status 
+  599  git add .
+  600  git add --all
+  601  git status 
+  602  git commit -m "edit docker-compose"
+  603  git status 
+  604  git remote -v
+  605  git push origin master 
+  606  git status 
+  607  cd ..
+  608  ll
+  609  cd panel/
+  610  ll
+  611  vim docker-compose-develop.yml 
+  612  ll
+  613  mv docker-compose-develop.yml docker-compose.yml 
+  614  git status 
+  615  git add .
+  616  git add --all
+  617  git status 
+  618  git commit -m "edit docker-compose"
+  619  git status 
+  620  git remote -v
+  621  git push origin master 
+  622  git status 
+  623  docker-compose up -d --build
+  624  l
+  625  docker-compose ps
+  626  ll
+  627  vim Dockerfile 
+  628  cd ..
+  629  ll
+  630  cd new-espard-website/
+  631  ll
+  632  vim docker-compose.yml 
+  633  cd ..
+  634  ll
+  635  cd new-espard-website
+  636  ll
+  637  vim docker-compose.yml 
+  638  cd ..
+  639  ll
+  640  cd new-espard-website/
+  641  vim docker-compose.yml 
+  642  cd ..
+  643  ll
+  644  cd new-espard-website/
+  645  cd ..
+  646  cd new-spard/
+  647  ll
+  648  docker pull reg.espard.com/espard/tfi:latest
+  649  docker login reg.espard.com
+  650  زی ..
+  651  cd ..
+  652  ll
+  653  cd new-spard/
+  654  ll
+  655  vim docker-compose.yml 
+  656  cd node8/
+  657  ll
+  658  vim Dockerfile 
+  659  cd ..
+  660  docker-compose up -d
+  661  docker ps
+  662  ls -l
+  663  cd ..
+  664  ls -l
+  665  cd new-espard-website/
+  666  vim Dockerfile 
+  667  ls -l
+  668  docker-compose -f docker-compose.yml up -d
+  669  docker image ls
+  670  docker ps -a
+  671  docker image ls
+  672  docker rm -f $(docker ps -aq)
+  673  docker ps
+  674  docker ps -a
+  675  logout 
+  676  ip a
+  677  ip a | grep inet
+  678  docker login reg.espard.com
+  679  docker logout 
+  680  docker logout reg.espard.com
+  681  docker login reg.espard.com
+  682  docker login https://reg.espard.com
+  683  docker login reg.espard.com
+  684  docker logout reg.espard.com
+  685  cat .ssh/id_rsa.pub 
+  686  cd /data
+  687  ll
+  688  cd ..
+  689  cd /ro
+  690  cd /root/
+  691  docker ps
+  692  docker rm -f $(docker ps -aq)
+  693  docker rmi -f $(docker images -aq)
+  694  docker image ls
+  695  git clone  https://github.com/jorgedlcruz/zimbra-docker.git
+  696  ll
+  697  docker pull jorgedlcruz/zimbra
+  698  cd zimbra-docker/
+  699  ll
+  700  cd docker/
+  701  ll
+  702  vim Dockerfile 
+  703  cd ..
+  704  cd /root/
+  705  ll
+  706  pwd
+  707  docker run -p 25:25 -p 80:80 -p 465:465 -p 587:587 -p 110:110 -p 143:143 -p 993:993 -p 995:995 -p 443:443 -p 8080:8080 -p 8443:8443 -p 7071:7071 -p 9071:9071 -h zimbra-docker.zimbra.io --dns 127.0.0.1 --dns 8.8.8.8 -i -t -e PASSWORD=Zimbra2017 jorgedlcruz/zimbra
+  708  who
+  709  w
+  710  las
+  711  last
+  712  mkdir t1
+  713  cd t1/
+  714  ls -l
+  715  cd ..
+  716  ll
+  717  cd testapp/
+  718  ll
+  719  cd application/
+  720  ll
+  721  cp -r package.json gulpfile.js /root/t1/
+  722  cd /root/t1
+  723  ls -l
+  724  vim Dockerfile
+  725  docker build -t .
+  726  docker build test:la -t .
+  727  docker build  -t t:t1 .
+  728  vim Dockerfile
+  729  docker build  -t t:t2 .
+  730  docker image ls
+  731  docker logout reg.espard.com
+  732  docker image ls
+  733  docker logout reg.espard.com
+  734  docker build  -t t:t2 .
+  735  systemctl restart docker
+  736  docker build  -t t:t2 .
+  737  docker image ls
+  738  reboot 
+  739  cd t1/
+  740  ls -l
+  741  vim Dockerfile 
+  742  ll
+  743  systemctl status docker
+  744  systemctl status docker -l
+  745  ll
+  746  docker images
+  747  df- h
+  748  df -h
+  749  docker pull raghuttnd/ttnblog_wpmysql
+  750  docker pull raghuttnd/ttnblog_wpnginx
+  751  ip a
+  752  ip a | grep 192
+  753  ll
+  754  cd tfi/
+  755  ll
+  756  cd new-tfi/
+  757  ll
+  758  vim config_org.php 
+  759  vim config.php 
+  760  vim config
+  761  vim config.php 
+  762  vim config_org.php 
+  763  cd ..
+  764  ll
+  765  cd ..
+  766  ll
+  767  cd tfi/
+  768  cd new-tfi/
+  769  ll
+  770  vim config.php 
+  771  ll
+  772  cd ..
+  773  ll
+  774  mkdir ttfi
+  775  cd ttfi/
+  776  git clone http://gitlab.espard.com/grp-espard/tfi.git
+  777  ll
+  778  cd tfi/
+  779  ll
+  780  cd ..
+  781  ll
+  782  cd -
+  783  ll
+  784  mkdir source
+  785  ll
+  786  rm -r tfi/
+  787  rm -rf tfi/
+  788  ll
+  789  git clone http://gitlab.espard.com/grp-espard/tfi.git source
+  790  ll
+  791  cd source/
+  792  ll
+  793  cd ..
+  794  ll
+  795  mkdir volumes
+  796  cd volumes/
+  797  mkdir dynamic
+  798  cd dynamic/
+  799  cd ..
+  800  cd..
+  801  cd ..
+  802  ll
+  803  http://gitlab.espard.com/deployments/tfi.git 
+  804  git clone http://gitlab.espard.com/deployments/tfi.git 
+  805  ll
+  806  rm -rf tfi/
+  807  ll
+  808  git clone http://gitlab.espard.com/deployments/tfi.git 
+  809  ll
+  810  cd tfi/
+  811  ll
+  812  cd ..
+  813  mv tfi/docker-compose.yml .
+  814  ll
+  815  rm rf tfi/
+  816  rm -rf tfi/
+  817  l
+  818  ll
+  819  cd source/
+  820  vim config.php 
+  821  ll
+  822  git status 
+  823  ll
+  824  cd ..
+  825  docker-compose up -d
+  826  docker login 
+  827  docker login reg.espard.com
+  828  docker-compose up -d
+  829  cd ..
+  830  ll
+  831  cd tfi/
+  832  ll
+  833  cd new-tfi/
+  834  ll
+  835  docker ps
+  836  curl locslhost
+  837  curl http://locslhost
+  838  docker ps
+  839  proxychains4 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+  840  curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+  841  curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.12.0/bin/linux/amd64/kubectl
+  842  chmod +x ./kubectl
+  843  sudo mv ./kubectl /usr/local/bin/kubectl
+  844  kubectl version
+  845  chmod +x ./kubectl
+  846  ll
+  847  kubectl 
+  848  kubectl -v
+  849  cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+  850  kubectl version
+  851  kubectl 
+  852  curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.14.0/bin/linux/amd64/kubectl
+  853  cd ./
+  854  ll
+  855  vim kubectl 
+  856  rm kubectl 
+  857  ll
+  858  l
+  859  ll
+  860  pwd
+  861  proxychains4 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.12.0/bin/linux/amd64/kubectl
+  862  ll
+  863  chmod +x ./kubectl
+  864  sudo mv ./kubectl /usr/local/bin/kubectl
+  865  kubectl version
+  866  cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+  867  [kubernetes]
+  868  name=Kubernetes
+  869  baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+  870  enabled=1
+  871  gpgcheck=1
+  872  repo_gpgcheck=1
+  873  gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+  874  EOF
+  875  yum install -y kubectl
+  876  proxychains4 yum install -y kubectl
+  877  kubectl 
+  878  kubectl version
+  879  kubectl cluster-info
+  880  kubectl cluster-info dump
+  881  curl localhost:8080
+  882  ll
+  883  cd /etc/
+  884  cd..
+  885  cd ..
+  886  cd ./
+  887  cd /root/
+  888  ll
+  889  ll | grep ku
+  890  vim /etc/krb5.conf
+  891  ll
+  892  kubectl get pods
+  893  kubectl --kubeconfig 
+  894  cd ~/.kube
+  895  kubectl gepod
+  896  kubectl ge pod
+  897  kubectl get pod
+  898   sudo yum install bash-completion
+  899  kubectl get pod
+  900  kubectl get --help
+  901  kubectl get pod
+  902  kubectl completion bash
+  903  type _init_completion
+  904  yum install bash-completion
+  905  /usr/share/bash-completion/bash_completion
+  906  sudo /usr/share/bash-completion/bash_completion
+  907  source /usr/share/bash-completion/bash_completion
+  908  type _init_completion
+  909  echo 'source <(kubectl completion bash)' >>~/.bashrc
+  910  kubectl completion bash >/etc/bash_completion.d/kubectl
+  911  type _init_completion
+  912  kubectl completion bash
+  913  rset
+  914  reset
+  915  type _init_completion
+  916  kubectl version
+  917  kubectl --help
+  918  echo 'source <(kubectl completion bash)' >>~/.bashrc
+  919  ll
+  920  mkdir kube
+  921  ll
+  922  cd kube/
+  923  ll
+  924  cd ..
+  925  ll
+  926  ll | grep sah
+  927  unzip sahebi.zip 
+  928  ll
+  929  ll | grep sah
+  930  mkdir crt
+  931  cd crt/
+  932  ll
+  933  cp -R /root/sahebi.zip .
+  934  ll
+  935  unzip sahebi.zip 
+  936  ll
+  937  rm -r sahebi.
+  938  rm -r sahebi.zip 
+  939  ll
+  940  cp -R . /root/kube/
+  941  cd ..
+  942  cd kube/
+  943  ll
+  944  vim config 
+  945  cd ..
+  946  kubectl version
+  947  kubectl get pod
+  948  ls
+  949  mv kube/ .kube
+  950  kubectl get pod
+  951  kubectl version
+  952  kubectl --help
+  953  kubectl get namespace
+  954  ll
+  955  kubectl get namesapace
+  956  kubectl get namespace
+  957   sudo yum install bash-completion
+  958  cat >> $HOME/.bash_profile << __EOF__
+  959  source <(kubectl completion bash)
+  960  __EOF__
+  961  cat > /etc/bash_completion.d/kubectl << __EOF__
+  962  source <(kubectl completion bash)
+  963  __EOF__
+  964  source <(kubectl completion bash) # setup autocomplete in bash into the current shell, bash-completion package should be installed first.
+  965  echo "source <(kubectl completion bash)" >> ~/.bashrc # add autocomplete permanently to your bash shell.
+  966  kubectl get namespaces 
+  967  kubectl --help | more
+  968  ip a
+  969  ip a | grep 192
+  970  kubectl get nodes
+  971  cat ~/.kube/
+  972  cd ~/.kube/
+  973  ll
+  974  cd ..
+  975  ll
+  976  kubectl version 
+  977  kubectl get namespaces 
+  978  kubectl get namespaces logs 
+  979  kubectl get namespaces 
+  980  git clone http://gitlab.espard.com/deployments/prohelp.git
+  981  ll
+  982  cd prohelp/
+  983  ll
+  984  vim docker-compose.yml 
+  985  docker-compose up -d
+  986  vim docker-compose.yml 
+  987  df -h
+  988  docker-compose up -d
+  989  docker search wordpress 
+  990  docker search prrsian wordpress 
+  991  docker search persian wordpress 
+  992  docker search persianwordpress 
+  993  docker search farsi
+  994  git clone git@gitlab.imbco.ir:tik8/website-ssr.git
+  995  git clone https://gitlab.imbco.ir/tik8/website-ssr.git
+  996  ll
+  997  cd website-ssr/
+  998  ll
+  999  git branch 
+ 1000  git checkout develop
+ 1001  git branch 
+ 1002  ll
+ 1003  docker build -t ssr .
+ 1004  vim Dockerfile 
+ 1005  docker run -tid --name ssr1 ssr
+ 1006  docker ps
+ 1007  docker ps -a
+ 1008  docker rm -f ssr1
+ 1009  docker ps -a
+ 1010  kubectl --version
+ 1011  kubectl -v
+ 1012  kubectl --version
+ 1013  kubectl -v
+ 1014  kubectl -V
+ 1015  kubectl --v
+ 1016  kubectl -v
+ 1017  kubectl --help
+ 1018  kubectl version
+ 1019  kubectl get namespace
+ 1020  kubectl get namespaces 
+ 1021  kubectl get pods
+ 1022  kubectl get pod
+ 1023  kubectl get namespaces 
+ 1024  ll
+ 1025  vim Dockerfile 
+ 1026  cd..
+ 1027  cd ..
+ 1028  kubectl get namespace
+ 1029  ll
+ 1030  kubectl get namespaces ]
+ 1031  kubectl get namespaces 
+ 1032  kubectl get pods
+ 1033  kubectl get pod
+ 1034  kubectl get po
+ 1035  kubectl get namespaces 
+ 1036  mkdir ssr
+ 1037  cd ssr/
+ 1038  vim ssr-dev.yml
+ 1039  kubectl get namespaces 
+ 1040  kubectl get namespaces --namespace=ssr-develop
+ 1041  kubectl get --namespace=ssr-develop
+ 1042  kubectl  --namespace=ssr-develop get po
+ 1043  kubectl  --namespace=ssr-develop get pods
+ 1044  kubectl  --namespace=ssr-develop get namespaces 
+ 1045  kubectl  --namespace=ssr-develop get cluster-info
+ 1046  ll
+ 1047  vim ssr-dev.yml 
+ 1048  kubectl  get pods
+ 1049  kubectl  delete pods
+ 1050  kubectl  delete --all  pods
+ 1051  kubectl  get pods
+ 1052  kubectl  delete --all  pods
+ 1053  kubectl  get pods
+ 1054  ll
+ 1055  kubectl apply -f ssr-dev.yml 
+ 1056  vim ssr-dev.yml 
+ 1057  kubectl apply -f ssr-dev.yml 
+ 1058  kubectl get rc
+ 1059  kubectl apply -f ssr-dev.yml 
+ 1060  vim ssr-dev.yml 
+ 1061  cd ..
+ 1062  ll
+ 1063  cd website-ssr/
+ 1064  ll
+ 1065  vim Dockerfile 
+ 1066  kubectl get pods
+ 1067  ll
+ 1068  vim Dockerfile 
+ 1069  cd -
+ 1070  ll
+ 1071  cd ssr/
+ 1072  ll
+ 1073  vim ssr-dev.yml 
+ 1074  ll
+ 1075  cd -
+ 1076  cd website-ssr/
+ 1077  ll
+ 1078  vim Dockerfile 
+ 1079  vim /root/website-ssr/Dockerfile 
+ 1080  ll
+ 1081  vim /root/ssr/ssr-dev.yml 
+ 1082  ll
+ 1083  docker --build -t ssr-develop .
+ 1084  docker build -t ssr-develop .
+ 1085  docker image ls
+ 1086  docker build -t ssr-develop .
+ 1087  vim /root/ssr/ssr-dev.yml 
+ 1088  docker build -t ssr-develop:develop-latest .
+ 1089  docker login http://registry.imbco.ir/
+ 1090  docker image ls
+ 1091  docker push ssr-develop:develop-latest 
+ 1092  docker rmi -f $(docker images)
+ 1093  docker images 
+ 1094  docker image
+ 1095  docker image ls
+ 1096  docker logout 
+ 1097  docker login 
+ 1098  ll
+ 1099  docker image ls
+ 1100  docker build -t ssr-develop:develop-latest .
+ 1101  docker image ls
+ 1102  docker login http://registry.imbco.ir
+ 1103  docker push ssr-develop:develop-latest 
+ 1104  docker push ssr-develop
+ 1105  docker push ssr-develop:develop-latest 
+ 1106  docker tag ssr-develop:develop-latest registry.imbco.ir/tik8/ssr-develop:develop-latest
+ 1107  docker push registry.imbco.ir/tik8/ssr-develop:develop-latest
+ 1108  مم
+ 1109  ll
+ 1110  cd /root/ssr/
+ 1111  ll
+ 1112  vim ssr-dev.yml 
+ 1113  kubectl apply -f ssr-dev.yml 
+ 1114  vim ssr-dev.yml 
+ 1115  kubectl apply -f ssr-dev.yml 
+ 1116  vim ssr-dev.yml 
+ 1117  kubectl apply -f ssr-dev.yml 
+ 1118  vim ssr-dev.yml 
+ 1119  kubectl apply -f ssr-dev.yml 
+ 1120  vim ssr-dev.yml 
+ 1121  kubectl apply -f ssr-dev.yml 
+ 1122  vim ssr-dev.yml 
+ 1123  kubectl apply -f ssr-dev.yml 
+ 1124  vim ssr-dev.yml 
+ 1125  kubectl apply -f ssr-dev.yml 
+ 1126  vim ssr-dev.yml 
+ 1127  kubectl apply -f ssr-dev.yml 
+ 1128  vim ssr-dev.yml 
+ 1129  kubectl apply -f ssr-dev.yml 
+ 1130  vim ssr-dev.yml 
+ 1131  kubectl apply -f ssr-dev.yml 
+ 1132  vim ssr-dev.yml 
+ 1133  kubectl apply -f ssr-dev.yml 
+ 1134  vim ssr-dev.yml 
+ 1135  kubectl apply -f ssr-dev.yml 
+ 1136  vim ssr-dev.yml 
+ 1137  kubectl apply -f ssr-dev.yml 
+ 1138  vim ssr-dev.yml 
+ 1139  kubectl apply -f ssr-dev.yml 
+ 1140  vim ssr-dev.yml 
+ 1141  kubectl apply -f ssr-dev.yml 
+ 1142  vim ssr-dev.yml 
+ 1143  kubectl apply -f ssr-dev.yml 
+ 1144  vim ssr-dev.yml 
+ 1145  kubectl apply -f ssr-dev.yml 
+ 1146  vim ssr-dev.yml 
+ 1147  kubectl apply -f ssr-dev.yml 
+ 1148  vim ssr-dev.yml 
+ 1149  kubectl apply -f ssr-dev.yml 
+ 1150  vim ssr-dev.yml 
+ 1151  cat ssr-dev.yml 
+ 1152  vim imbco_tik8.yaml
+ 1153  ll
+ 1154  vim ssr-dev.yml 
+ 1155  kubectl apply -f ssr-dev.yml 
+ 1156  kubectl apply -f imbco_tik8.yaml --namespace=ssr-develop
+ 1157  docker pod
+ 1158  docker get pod
+ 1159  kubectl get pod
+ 1160  kubectl get pods
+ 1161  kubectl get service
+ 1162  vim 
+ 1163  vim ssr-dev.yml
+ 1164  cp ssr-dev.yml ssr-dev.yml.back 
+ 1165  ll
+ 1166  vim ssr-dev.yml
+ 1167  kubectl apply -f ssr-dev.yml -l kind=deployment
+ 1168  kubectl get deployments
+ 1169  vim ssr-dev.yml
+ 1170  kubectl get pod
+ 1171  kubectl log -f -t 100 ssr-develop-79c6d7d5fd-8sb2g
+ 1172  kubectl log -f --tail 100 ssr-develop-79c6d7d5fd-8sb2g
+ 1173  vim /root/website-ssr/Dockerfile 
+ 1174  ll
+ 1175  kubectl delete -f ssr-dev.yml -l kind=deployment
+ 1176  cd /root/website-ssr/
+ 1177  ll
+ 1178  docker build -t ssr-develop:develop-latest .
+ 1179  ll
+ 1180  ls -A
+ 1181  ll -A
+ 1182  vim Dockerfile 
+ 1183  vim .env
+ 1184  docker build -t ssr-develop:develop-latest .
+ 1185  docker login http://registry.imbco.ir/
+ 1186  docker tag ssr-develop:develop-latest registry.imbco.ir/tik8/ssr-develop:develop-latest
+ 1187  docker push registry.imbco.ir/tik8/ssr-develop:develop-latest
+ 1188  ll
+ 1189  cd -
+ 1190  ll
+ 1191  kubectl apply -f ssr-dev.yml -l kind=deploymnet
+ 1192  ll
+ 1193  kubectl apply -f ssr-dev.yml -l kind=deployment
+ 1194  kubectl get deployments
+ 1195  kubectl get pod
+ 1196  kubectl log -f --tail 100 ssr-develop-79c6d7d5fd-8sb2g
+ 1197  kubectl log -f --tail 100 ssr-develop-79c6d7d5fd-4cx5n
+ 1198  kubectl describe pod  ssr-develop-79c6d7d5fd-4cx5n
+ 1199  history 
+ 1200  ll
+ 1201  cp ssr-dev.yml.back /tmp/
+ 1202  cp ssr-dev.yml.back ssr-dev.yml
+ 1203  vi ssr-dev.yml
+ 1204  vim ssr-dev.yml
+ 1205  kubectl get  pod
+ 1206  kubectl get  pod -o wide
+ 1207  vim ssr-dev.yml
+ 1208  kubectl explain ingress
+ 1209  kubectl explain service
+ 1210* 
+ 1211  kubectl apply -f ssr-dev.yml -l kind=service
+ 1212  kubectl get pod
+ 1213  kubectl get service
+ 1214  kubectl describe service
+ 1215  kubectl get  pod 
+ 1216  kubectl describe service
+ 1217* 
+ 1218  kubectl apply -f ssr-dev.yml -l kind=ingress
+ 1219  kubectl describe ingress
+ 1220  kubectl get ingress
+ 1221  kubectl get pod
+ 1222  history 
+ 1223  history > his.txt
+ 1224  cat his.txt 
+ 1225  history 
+ 1226  cat his.txt 
+ 1227  cat his.txt | wc
+ 1228  kubectl get pod
+ 1229  kubectl log -f --tail 100 ssr-develop-79c6d7d5fd-4cx5n
+ 1230  vim ssr-dev.yml
+ 1231  kubectl apply -f ssr-dev.yml 
+ 1232  vim ssr-dev.yml
+ 1233  kubectl apply -f ssr-dev.yml 
+ 1234  vim ssr-dev.yml
+ 1235  kubectl apply -f ssr-dev.yml 
+ 1236  vim ssr-dev.yml
+ 1237  kubectl apply -f ssr-dev.yml 
+ 1238  kubectl delete -f ssr-dev.yml -l kind=ingress
+ 1239  vim ssr-dev.yml
+ 1240  history > his.txt 
+ 1241  openssl passwd -apr1
+ 1242  vim his.txt 
+ 1243  echo "ssr:$apr1$9JJOZTwz$k20IS9PD3FEwCIr6PYBtM/" | base64
+ 1244  echo 'ssr:$apr1$9JJOZTwz$k20IS9PD3FEwCIr6PYBtM/' | base64
+ 1245  echo 'ssr:$apr1$9JJOZTwz$k20IS9PD3FEwCIr6PYBtM/'
+ 1246  echo -n 'ssr:$apr1$9JJOZTwz$k20IS9PD3FEwCIr6PYBtM/' | base64
+ 1247  vim ssr-dev.yml
+ 1248  kubectl apply -f ssr-dev.yml -l kind=ingress
+ 1249  vim ssr-dev.yml
+ 1250  kubectl apply -f ssr-dev.yml -l kind=secret
+ 1251  git status 
+ 1252  ll
+ 1253  history > his.txt 
+ 1254  cat his.txt 
+ 1255  ll
+ 1256  cd ..
+ 1257  git clone https://gitlab.imbco.ir/msahebi/deployment.git
+ 1258  ll
+ 1259  cd ssr/
+ 1260  ll
+ 1261  cd ..
+ 1262  cd deployment/
+ 1263  ll
+ 1264  cd development/ssr/
+ 1265  ll
+ 1266  cp -R /root/ssr/imbco_tik8.yaml .
+ 1267  pwd
+ 1268  ll
+ 1269  cp -R /root/ssr/ssr-dev.yml .
+ 1270  ll
+ 1271  git status 
+ 1272  git add .
+ 1273  git status 
+ 1274  git commit -m "add ssr yml"
+ 1275  git branch 
+ 1276  git status 
+ 1277  git reset --soft HEAD~1 
+ 1278  git status 
+ 1279  git checkout -b ssr
+ 1280  git add .
+ 1281  git status 
+ 1282  git commit -m "add ssr"
+ 1283  git push origin master 
+ 1284  git push origin ssr 
+ 1285  ll
+ 1286  vim ssr-dev.yml 
+ 1287  ll
+ 1288  cd -
+ 1289  ll
+ 1290  cd ..
+ 1291  ll
+ 1292  cd ssr/
+ 1293  ll
+ 1294* 
+ 1295  cat his.txt 
+ 1296  pwd
+ 1297  ll
+ 1298  cd ..
+ 1299  ll
+ 1300  cd website-ssr/
+ 1301  ll
+ 1302  git status 
+ 1303  git add .
+ 1304  git status 
+ 1305  git commit -m "edit Dockerfile"
+ 1306  git status 
+ 1307  git push origin master 
+ 1308  ll
+ 1309  git branch 
+ 1310  git push origin develop
+ 1311  git pull origin develop
+ 1312  git push origin develop
+ 1313  git pull origin develop
+ 1314  git branch 
+ 1315  git stata
+ 1316  git statas
+ 1317  git status
+ 1318  git add Dockerfile
+ 1319  git status
+ 1320  git commit -m "edit"
+ 1321  git status
+ 1322  git branch 
+ 1323  git push origin develop 
+ 1324  vim Dockerfile 
+ 1325  git status
+ 1326  git add Dockerfile
+ 1327  git status 
+ 1328  git commit -m "edit dockerfile"
+ 1329  git status 
+ 1330  git push origin develop 
+ 1331  ll
+ 1332  cd ..
+ 1333  ll
+ 1334  cd ssr/
+ 1335  ll
+ 1336  cat his.txt 
+ 1337  cat his.txt | grep kube
+ 1338  cat his.txt | grep kubectl
+ 1339  sudo scp -r his.txt       192.168.104.8:/home/msahebi
+ 1340  ll
+ 1341  ls -l
+ 1342  cat his.txt 
+ 1343  ll
+ 1344  kubectl describe deployments
+ 1345  ll
+ 1346  cat ssr-dev.yml
+ 1347  vim ssr-dev.yml
+ 1348  kubectl explain deployment
+ 1349  vim ssr-dev.yml
+ 1350  kubectl get nod
+ 1351  kubectl get node
+ 1352  kubectl get nodes
+ 1353  ll
+ 1354  cd -
+ 1355  ll
+ 1356  cd website-ssr/
+ 1357  ll
+ 1358  vim Dockerfile 
+ 1359  cp Dockerfile Dockerfile.back
+ 1360  vim Dockerfile
+ 1361  cd -
+ 1362  cd ssr/
+ 1363  ll
+ 1364  vim ssr-dev.yml
+ 1365  kubectl apply -f -l kind=ingress
+ 1366  kubectl apply  -l kind=ingress
+ 1367  vim ssr-dev.yml
+ 1368  kubectl apply -f ssr-dev.yml -l kind=ingress
+ 1369  vim ssr-dev.yml
+ 1370  kubectl log -f --tail 100 ssr-develop
+ 1371  get pod
+ 1372  kubectl get pod
+ 1373  [root@centos ssr]# kubectl log -f --tail 100 ssr-develop
+ 1374   kubectl log -f --tail 100 ssr-develop-df8c4df65-58x5p
+ 1375  cat his.txt 
+ 1376  cat his.txt | grep ss
+ 1377  vim ssr-dev.yml
+ 1378   kubectl log -f --tail 100 ssr-develop-df8c4df65-58x5p
+ 1379   kubectl log -f -t 100 ssr-develop-df8c4df65-58x5p
+ 1380   kubectl log -f --tail 100 ssr-develop-df8c4df65-58x5p
+ 1381  vim ssr-dev.yml
+ 1382  kubectl apply -f ssr-dev.yml -l kind=ingress
+ 1383  kubectl delete -f ssr-dev.yml -l kind=ingress
+ 1384  kubectl apply -f ssr-dev.yml -l kind=ingress
+ 1385  vim ssr-dev.yml
+ 1386* 
+ 1387  vim ssr-dev.yml
+ 1388  kubectl apply -f ssr-dev.yml -l kind=ingress
+ 1389  ll
+ 1390  vim ssr-dev.yml
+ 1391  kubectl delete -f ssr-dev.yml -l kind=ingress
+ 1392  vim ssr-dev.yml
+ 1393  ll
+ 1394  cp ssr-dev.yml /root/website-ssr/
+ 1395  ll
+ 1396  rm ssr-dev.yml.back 
+ 1397  cp his.txt /root/website-ssr/
+ 1398  ll
+ 1399  rm his.txt 
+ 1400  ll
+ 1401  vim ssr-dev.yml 
+ 1402  git status 
+ 1403  pwd
+ 1404  git status 
+ 1405  cd ..
+ 1406  ll
+ 1407  cd website-ssr/
+ 1408  ll
+ 1409  cd ..
+ 1410  cd ssr/
+ 1411  git status 
+ 1412  ll
+ 1413  git status 
+ 1414  cd ..
+ 1415  ll
+ 1416  cd website-ssr/
+ 1417  git status 
+ 1418  ll
+ 1419  mv ssr-dev.yml /root/
+ 1420  mv Dockerfile.back /root/
+ 1421  ll
+ 1422  cd ss
+ 1423  cd ..
+ 1424  ll
+ 1425  cd ssr/
+ 1426  ll
+ 1427  git status 
+ 1428  cd ..
+ 1429  cd ssr/
+ 1430  ll
+ 1431  cd ..
+ 1432  cd website-ssr/
+ 1433  ll
+ 1434  rm his.txt 
+ 1435  ll
+ 1436  git status 
+ 1437  vim Dockerfile 
+ 1438  docker run -tid --name ssrtest ssr-develop:develop-latest 
+ 1439  docker ps
+ 1440  docker exec -ti ssrtest bash
+ 1441  ll
+ 1442  docker exec -ti ssrtest bash
+ 1443  ls- l
+ 1444  ls - l
+ 1445  cd ..
+ 1446  ll
+ 1447  cd ssr/
+ 1448  ll
+ 1449  git status 
+ 1450  git remote -v
+ 1451  pwd
+ 1452  cd ..
+ 1453  mv Dockerfile.back /root/
+ 1454  git clone https://gitlab.imbco.ir/msahebi/deployment.git
+ 1455  cd deployment/
+ 1456  ll
+ 1457  cd ..
+ 1458  ll
+ 1459  cd deployment/
+ 1460  ll
+ 1461  cd development/
+ 1462  ll
+ 1463  cd ssr/
+ 1464  ll
+ 1465  git status 
+ 1466  git remote 
+ 1467  git remote -v
+ 1468  git status 
+ 1469  vim ssr-dev.yml 
+ 1470  docker exec -ti ssrtest bash
+ 1471  cd /root/website-ssr/
+ 1472  git branch 
+ 1473  docker exec -ti ssrtest bash
+ 1474  cd /root/deployment/
+ 1475  cd development/
+ 1476  ll
+ 1477  cd ssr/
+ 1478  ll
+ 1479  git status 
+ 1480  git branch 
+ 1481  git remote -v
+ 1482  ls -l
+ 1483  vim imbco_tik8.yaml 
+ 1484  vim ssr-dev.yml 
+ 1485  cp ssr-dev.yml imbco_tik8.yaml /root/
+ 1486  ll
+ 1487  git status 
+ 1488  git remote 
+ 1489  git remote -v
+ 1490  ls -l
+ 1491  vim ssr-dev.yml 
+ 1492  git status 
+ 1493  git add ssr-dev.yml
+ 1494  git status 
+ 1495  git commit -m "edit ssr-dev remove ingress"
+ 1496  git status 
+ 1497  git branch 
+ 1498  git push origin ssr 
+ 1499  git branch 
+ 1500  docker exec -ti ssrtest bash
+ 1501  ll
+ 1502  git status 
+ 1503  git remote -v
+ 1504  git branch 
+ 1505  cd /root/
+ 1506  ll
+ 1507  vim ssr-dev.yml 
+ 1508  mkdir sss
+ 1509  cd sss/
+ 1510  ll
+ 1511  cd ..
+ 1512  ll
+ 1513  mv ssr-dev.yml sss/
+ 1514  cd sss/
+ 1515  ll
+ 1516  cd ,,
+ 1517  cd ..
+ 1518  mv imbco_tik8.yaml sss/
+ 1519  cd sss/
+ 1520  ll
+ 1521  cd ..
+ 1522  ll
+ 1523  cd website-ssr/
+ 1524  ll
+ 1525  git branch 
+ 1526  git pull origin develop
+ 1527  ll
+ 1528  vim .gitlab-ci.yml 
+ 1529  cp .gitlab-ci.yml /tmp/
+ 1530  cd /tmp/
+ 1531  vim .gitlab-ci.yml 
+ 1532  ll
+ 1533  clear 
+ 1534  kubectl get pods
+ 1535  kubectl get deployments
+ 1536  kubectl get service
+ 1537  kubectl describe service
+ 1538  kubectl explain service
+ 1539  kubectl get node
+ 1540  kubectl get nodes
+ 1541  kubectl get naespace
+ 1542  kubectl get namespaces 
+ 1543  kubectl get service
+ 1544  kubectl get secrets 
+ 1545  kubectl describe secrets 
+ 1546  ll
+ 1547  ls -l /root/
+ 1548  ls -l /root/ | grep his
+ 1549  ls -l 
+ 1550  pwd
+ 1551  cd ..
+ 1552  cd /roo
+ 1553  cd /root
+ 1554  ll
+ 1555  cd ssr/
+ 1556  l
+ 1557  ll
+ 1558  cd ..
+ 1559  history 
+ 1560  history > history.txt
