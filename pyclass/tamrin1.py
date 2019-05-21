@@ -1,9 +1,30 @@
-str_list =  ('mohamad  sahebi  sahebi hello is mohamad that is hello')
-lst_list = str_list.split()
-print(lst_list)
-for i in lst_list:
-    count = lst_list.count(i)
-    print(count,i)
+str1 = 'mohamad sahebi sahebi is mohamad is is that sahebi that hamid hamed hasan hasan ali ali ali a a a a b b b b w w w w w'
+ls1 = str1.split(" ")
+dic = dict()
+for st1 in  ls1:
+    if st1 in dic:
+        dic[st1] += 1
+    else:
+        dic[st1] =1
+print(dic)  
+        
+
+            
+        
+   
+
+       
+          
+
+      
+
+
+
+
+
+
+        
+
 
     
 
