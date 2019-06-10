@@ -26,3 +26,9 @@ _acme-challenge
 6:   convert certificate TO PFX   
    
 https://www.sslshopper.com/ssl-converter.html
+
+add  fullchain1.pem   ---→>>  Certificate File to Convert
+add   privkey1.pem    ---→>>  Private Key File
+Type of Current Certificate --→>> Standard PEM
+Type To Convert To          --→>> PFX/PKCS#12
+output fullchain1.pfx copy to exchange server and share it 
