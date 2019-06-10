@@ -1,0 +1,28 @@
+1: git clone https://github.com/certbot/certbot
+
+2 : ./certbot-auto certonly --manual -d netbarg.org -d mail.netbarg.org -d autodiscover.netbarg.org  --agree-tos --manual-public-ip-logging-ok --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory
+
+
+
+Please deploy a DNS TXT record under the name
+
+3: (DNS set)
+_acme-challenge.autodiscover
+k3PDKySesX3Sq2K6k_csXy53rRRZeInnuIQvrBFEKTE
+
+_acme-challenge.mail
+S5mLSMzZo0Hxhj-ausCwTby3AZpTJXUiKppwO34Bufw
+
+_acme-challenge
+87BrotXTUjaMPw9LhokEdE5g_izAxgq-uWLWFr1h-uk
+
+
+
+
+4:  cd /etc/letsencrypt/archive/
+
+5:  cp   fullchain1.pem , privkey1.pem   to your forlder and chmode +r
+
+6:   convert certificate TO PFX   
+   
+https://www.sslshopper.com/ssl-converter.html
