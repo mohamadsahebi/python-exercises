@@ -1,0 +1,373 @@
+
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname DataCore0
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$2Gqf$olsZodPherCGqUnZGjhJM0
+enable password DataCore_1394!
+!
+username admin privilege 15 password 0 DataCore_1394@
+!
+!
+aaa new-model
+!
+!
+!
+!
+!
+aaa session-id common
+switch 2 provision ws-c3750g-24ts-1u
+system mtu routing 1500
+authentication mac-move permit
+ip subnet-zero
+ip routing
+ip domain-name datacore.local
+!
+!
+cluster enable DataCoreCluster 0
+!
+!
+crypto pki trustpoint TP-self-signed-2983961984
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2983961984
+ revocation-check none
+ rsakeypair TP-self-signed-2983961984
+!
+!
+crypto pki certificate chain TP-self-signed-2983961984
+ certificate self-signed 01
+  30820250 308201B9 A0030201 02020101 300D0609 2A864886 F70D0101 04050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32393833 39363139 3834301E 170D3933 30333031 30303031 
+  33325A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 39383339 
+  36313938 3430819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281 
+  8100A499 991CDBB5 36D00B75 8A0A2077 D751F050 887C78B4 26D98825 B098A77B 
+  2FAEB9C1 2146DAAC 44383E27 1635754E 0C1ED630 B261BB53 D431C4D5 4C89455D 
+  9DC97436 9B9F718F F48E5D93 A232FE7B 71B8A7A0 6DC1EEAC D400AAC3 91A813E3 
+  6697527A 7F5861FA B77A3358 E4491C66 E636016E A91E02A3 EE798AE8 03547ACD 
+  BA6D0203 010001A3 78307630 0F060355 1D130101 FF040530 030101FF 30230603 
+  551D1104 1C301A82 18446174 61436F72 65302E64 61746163 6F72652E 6C6F6361 
+  6C301F06 03551D23 04183016 8014AF6C 2386E0CE F3CF5AC7 CA3EDFEE E4A4E10F 
+  8312301D 0603551D 0E041604 14AF6C23 86E0CEF3 CF5AC7CA 3EDFEEE4 A4E10F83 
+  12300D06 092A8648 86F70D01 01040500 03818100 0697A063 0FCFE5E2 19AB09C9 
+  B43C112D 997B2786 E202E7E2 89D40374 FE5C0ED9 FA3FCCB0 EB392BFA 2AA643EB 
+  14A5C24D 4880B9EC 5966271C CF42AE8A B026DFAF BEABCE23 47A9DBFE 8CB82F67 
+  5ECFEDDD 07465B1E 3621D23D 7EDB2E7A EEA848B1 620C4C7B 7B3859B0 CC3EAF16 
+  21DAFC21 634FA592 2FA1D60F 819BDFF8 5DC5BB28
+  quit
+!
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree etherchannel guard misconfig
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+!
+!
+interface Port-channel1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel3
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel4
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel5
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel6
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel7
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel8
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel9
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel10
+ switchport access vlan 108
+ switchport trunk encapsulation dot1q
+ switchport mode access
+!
+interface GigabitEthernet2/0/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/3
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 2 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/4
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 2 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/5
+ switchport access vlan 111
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/6
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 3 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/7
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 3 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/8
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 4 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/9
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 4 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/10
+ switchport access vlan 111
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/11
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 5 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/12
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 5 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/13
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 6 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/14
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 6 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/15
+ switchport access vlan 111
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/16
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 7 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/17
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 7 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/18
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 8 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/19
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 8 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/20
+ switchport access vlan 111
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/21
+ switchport access vlan 109
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/22
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/23
+ switchport access vlan 108
+ switchport trunk encapsulation dot1q
+ switchport mode access
+ channel-group 10 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/24
+ switchport access vlan 108
+ switchport trunk encapsulation dot1q
+ switchport mode access
+ channel-group 10 mode passive
+ spanning-tree portfast
+!
+interface GigabitEthernet2/0/25
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 9 mode passive
+!
+interface GigabitEthernet2/0/26
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 9 mode passive
+!
+interface GigabitEthernet2/0/27
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 9 mode passive
+!
+interface GigabitEthernet2/0/28
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 9 mode passive
+!
+interface Vlan1
+ ip address 192.168.200.1 255.255.255.0
+!
+interface Vlan103
+ ip address 192.168.103.1 255.255.255.0
+ ip helper-address 192.168.110.254
+!
+interface Vlan104
+ ip address 192.168.104.1 255.255.255.0
+ ip helper-address 192.168.110.254
+!
+interface Vlan105
+ ip address 192.168.105.1 255.255.255.0
+ ip helper-address 192.168.110.254
+!
+interface Vlan106
+ ip address 192.168.106.1 255.255.255.0
+ ip helper-address 192.168.110.254
+!
+interface Vlan108
+ ip address 192.168.108.1 255.255.255.0
+ ip helper-address 192.168.110.254
+!
+interface Vlan109
+ no ip address
+!
+interface Vlan110
+ ip address 192.168.110.1 255.255.255.0
+!
+interface Vlan111
+ ip address 192.168.111.1 255.255.255.0
+ ip helper-address 192.168.110.254
+!
+interface Vlan112
+ ip address 192.168.112.1 255.255.255.0
+!
+ip classless
+ip http server
+ip http authentication local
+ip http secure-server
+!
+!
+ip sla enable reaction-alerts
+snmp-server community DataCore RO
+snmp-server community DataCore@es0 RO
+snmp-server community solar_read RO
+snmp-server community solar_write RW
+snmp-server enable traps snmp authentication linkdown linkup coldstart warmstart
+snmp-server enable traps transceiver all
+snmp-server enable traps tty
+snmp-server enable traps eigrp
+snmp-server enable traps cluster
+snmp-server enable traps fru-ctrl
+snmp-server enable traps entity
+snmp-server enable traps cpu threshold
+snmp-server enable traps power-ethernet group 1-9
+snmp-server enable traps power-ethernet police
+snmp-server enable traps vtp
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps flash insertion removal
+snmp-server enable traps port-security
+snmp-server enable traps auth-framework sec-violation
+snmp-server enable traps dot1x auth-fail-vlan guest-vlan no-auth-fail-vlan no-guest-vlan
+snmp-server enable traps envmon fan shutdown supply temperature status
+snmp-server enable traps stackwise
+snmp-server enable traps license
+snmp-server enable traps event-manager
+snmp-server enable traps cef resource-failure peer-state-change peer-fib-state-change inconsistency
+snmp-server enable traps config-copy
+snmp-server enable traps config
+snmp-server enable traps config-ctid
+snmp-server enable traps hsrp
+snmp-server enable traps ipmulticast
+snmp-server enable traps pim neighbor-change rp-mapping-change invalid-pim-message
+snmp-server enable traps energywise
+snmp-server enable traps bridge newroot topologychange
+snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+snmp-server enable traps syslog
+snmp-server enable traps rtr
+snmp-server enable traps mac-notification change move threshold
+snmp-server enable traps vlan-membership
+snmp-server enable traps errdisable
+snmp-server host 192.168.110.18 version 2c solar_trap 
+!
+!
+line con 0
+line vty 0 4
+ privilege level 15
+ password DataCore_1394@
+ transport input ssh
+line vty 5 15
+ privilege level 15
+ password DataCore_1394@
+ transport input ssh
+!
+end

@@ -1,0 +1,167 @@
+
+!
+! No configuration change since last restart
+! NVRAM config last updated at 05:21:19 UTC Sun Jun 10 2018
+!
+version 15.0
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname A-R3-V-Core1
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$fS3y$LXEvHgz89rSlT5g0H0yI/0
+!
+username admin privilege 15 secret 5 $1$kBwD$IpP0DuE5ZPW5itGIaiRVd.
+no aaa new-model
+switch 1 provision ws-c2960x-24ts-l
+!
+!
+ip domain-name netbarg.ir
+login block-for 120 attempts 5 within 3
+!
+!
+crypto pki trustpoint TP-self-signed-1162246400
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-1162246400
+ revocation-check none
+ rsakeypair TP-self-signed-1162246400
+!
+!
+crypto pki certificate chain TP-self-signed-1162246400
+ certificate self-signed 01 nvram:IOS-Self-Sig#1.cer
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+ip ssh time-out 100
+ip ssh version 2
+!
+!
+!
+!
+!
+interface FastEthernet0
+ no ip address
+!
+interface GigabitEthernet1/0/1
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/2
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/3
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/4
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/5
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/6
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/7
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/8
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/9
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/10
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/11
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/12
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/13
+ switchport access vlan 109
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/14
+ switchport access vlan 108
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/15
+ switchport access vlan 106
+ switchport mode access
+ spanning-tree portfast
+!
+interface GigabitEthernet1/0/16
+ switchport trunk allowed vlan 1,106
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/17
+ switchport trunk allowed vlan 108
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/18
+ switchport trunk allowed vlan 109
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/19
+!
+interface GigabitEthernet1/0/20
+!
+interface GigabitEthernet1/0/21
+!
+interface GigabitEthernet1/0/22
+!
+interface GigabitEthernet1/0/23
+!
+interface GigabitEthernet1/0/24
+!
+interface GigabitEthernet1/0/25
+!
+interface GigabitEthernet1/0/26
+!
+interface GigabitEthernet1/0/27
+!
+interface GigabitEthernet1/0/28
+!
+interface Vlan1
+ ip address 192.168.201.1 255.255.255.0
+!
+ip http server
+ip http secure-server
+!
+!
+logging trap errors
+logging host 192.168.110.18
+!
+snmp-server community sw_trap RO
+snmp-server enable traps snmp linkdown linkup
+snmp-server enable traps config
+snmp-server enable traps cpu threshold
+snmp-server host 192.168.110.18 version 2c solar_trap 
+!
+banner motd A-R3-V-Core1  HELLO IT
+!
+line con 0
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+end
