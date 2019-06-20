@@ -1,6 +1,6 @@
 import os, time, datetime
 folder = input('Enter PWD address : ')
-date_time = os.listdir(folder)
+date_time = os.walk(folder)
 dic = dict()
 for item in  date_time:
     if item in dic:
