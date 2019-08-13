@@ -1,0 +1,171 @@
+
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname VoiceCore0
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$50nP$3Xu7oMShaQy7JjRDIWFCa0
+!
+username admin password 0 VoiceCore0_1394@
+!
+!
+no aaa new-model
+!
+!
+ip domain-name VoiceCore0.local
+!
+!
+crypto pki trustpoint TP-self-signed-2759330304
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2759330304
+ revocation-check none
+ rsakeypair TP-self-signed-2759330304
+!
+!
+crypto pki certificate chain TP-self-signed-2759330304
+ certificate self-signed 01
+  30820253 308201BC A0030201 02020101 300D0609 2A864886 F70D0101 04050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32373539 33333033 3034301E 170D3933 30333031 30303031 
+  35305A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 37353933 
+  33303330 3430819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281 
+  8100C5D1 5EDFB0BE EF371AF4 62DD797B 0030D501 3EA9E0B0 5675BCB4 29C8827F 
+  071DE8A2 CE48F9A0 CE1E3FE5 DBDF67F0 12C91653 06E4D287 FBBCF22A 8A7CBBBA 
+  F785443B A472C697 A13CC995 EA2FC8B2 D6D0854A D84E96A6 EDC70765 1FFD1C80 
+  C9AB1DE4 F3237871 F58F9AEB 428A53D5 5D05F937 7155AC8B 84F960D0 1CAA9DA4 
+  815B0203 010001A3 7B307930 0F060355 1D130101 FF040530 030101FF 30260603 
+  551D1104 1F301D82 1B566F69 6365436F 7265302E 566F6963 65436F72 65302E6C 
+  6F63616C 301F0603 551D2304 18301680 14BCD64E FF6DF9AE C675A0F8 6E1B11B2 
+  CE9AF1F8 C8301D06 03551D0E 04160414 BCD64EFF 6DF9AEC6 75A0F86E 1B11B2CE 
+  9AF1F8C8 300D0609 2A864886 F70D0101 04050003 81810070 331BF1C0 36259DC1 
+  DC474E6D DFD0CC5C EF4CFDFF 6AD603AE 9835FCAA 62B57BBE A44D40DC 0A04F503 
+  03BD7A7A 3A87273A 99E7EC01 B14CE980 AF080A65 8019A4F5 795E1786 399B8D92 
+  0E2D6DA7 CBE80E75 747DAD0E 6F839435 63A36D06 38275D93 82715895 424D7110 
+  34554216 22BA3012 F0319146 FFFDE342 BC911099 03871F
+  quit
+!
+spanning-tree mode rapid-pvst
+spanning-tree portfast default
+spanning-tree extend system-id
+spanning-tree uplinkfast
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+!
+interface Port-channel6
+ switchport mode trunk
+!
+interface FastEthernet0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/1
+ switchport access vlan 108
+!
+interface GigabitEthernet0/2
+ switchport mode trunk
+!
+interface GigabitEthernet0/3
+ switchport access vlan 108
+!
+interface GigabitEthernet0/4
+ switchport access vlan 108
+!
+interface GigabitEthernet0/5
+ switchport access vlan 108
+!
+interface GigabitEthernet0/6
+ switchport access vlan 108
+!
+interface GigabitEthernet0/7
+ switchport access vlan 108
+!
+interface GigabitEthernet0/8
+ switchport mode access
+!
+interface GigabitEthernet0/9
+ switchport mode trunk
+!
+interface GigabitEthernet0/10
+ switchport mode trunk
+!
+interface GigabitEthernet0/11
+ switchport mode trunk
+!
+interface GigabitEthernet0/12
+ switchport mode trunk
+!
+interface GigabitEthernet0/13
+ switchport mode trunk
+!
+interface GigabitEthernet0/14
+ switchport mode trunk
+!
+interface GigabitEthernet0/15
+ switchport mode trunk
+!
+interface GigabitEthernet0/16
+ switchport mode trunk
+!
+interface GigabitEthernet0/17
+ switchport mode trunk
+!
+interface GigabitEthernet0/18
+ switchport access vlan 108
+ switchport mode access
+!
+interface GigabitEthernet0/19
+ switchport access vlan 108
+ switchport mode access
+!
+interface GigabitEthernet0/20
+ switchport mode trunk
+!
+interface GigabitEthernet0/21
+ switchport mode trunk
+!
+interface GigabitEthernet0/22
+ switchport mode trunk
+!
+interface GigabitEthernet0/23
+ switchport mode trunk
+ channel-group 6 mode active
+!
+interface GigabitEthernet0/24
+ switchport mode trunk
+ channel-group 6 mode active
+!
+interface GigabitEthernet0/25
+!
+interface GigabitEthernet0/26
+!
+interface Vlan1
+ ip address 192.168.200.108 255.255.255.0
+!
+interface Vlan108
+ no ip address
+ ip helper-address 192.168.110.254
+!
+ip http server
+ip http secure-server
+!
+line con 0
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+end

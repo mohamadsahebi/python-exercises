@@ -1,0 +1,256 @@
+
+DataCore1#show running-config
+Building configuration...
+
+Current configuration : 7354 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname DataCore1
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$/4Vk$ITJtdS6QV6xMbrvHtA5PR/
+!
+username admin password 0 DataCore1_1394@
+!
+!
+no aaa new-model
+switch 1 provision ws-c3750g-24ts-1u
+system mtu routing 1500
+ip domain-name DataCore1.local
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-2198112384
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2198112384
+ revocation-check none
+ rsakeypair TP-self-signed-2198112384
+!
+!
+crypto pki certificate chain TP-self-signed-2198112384
+ certificate self-signed 01
+  30820251 308201BA A0030201 02020101 300D0609 2A864886 F70D0101 04050030
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 32313938 31313233 3834301E 170D3933 30333031 30303032
+  34315A17 0D323030 31303130 30303030 305A3031 312F302D 06035504 03132649
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 31393831
+  31323338 3430819F 300D0609 2A864886 F70D0101 01050003 818D0030 81890281
+  8100C214 5DD666C9 0E69BA90 01A50A80 D7DE67E7 681C0390 8CA7F100 9F9D03F6
+  28AF1917 8FAB1167 95C46D8D F082F2E2 6224A33F 2B1DBF79 8A7893FF 11FFD0BC
+  4F4553F0 B03C0D3C 0329FB3B EB89228F 76C80D7E EAFC81D3 996E0B5A 766E341E
+  F3BA1D1E 68710788 312A590C B98D96EB 408EBC89 363B0236 6A9FEE8E 0696B0DA
+  A8530203 010001A3 79307730 0F060355 1D130101 FF040530 030101FF 30240603
+  551D1104 1D301B82 19446174 61436F72 65312E44 61746143 6F726531 2E6C6F63
+  616C301F 0603551D 23041830 168014A9 BF5E74AD DE321A71 F5D19D3F DBBCBC87
+  5652C430 1D060355 1D0E0416 0414A9BF 5E74ADDE 321A71F5 D19D3FDB BCBC8756
+  52C4300D 06092A86 4886F70D 01010405 00038181 00BC90FD CCF5E2CF 35BD2E59
+  692694F4 8882E709 7D601296 1038D07F 76CF79F3 C89C5C99 27E26B48 3D3C9AC6
+  0EEAE26C ECA0C9AE 45268732 38F96CC9 1404B6A9 9DB083FC 590F47F8 6E816835
+  B36717CE 407F565C 4A7DB033 2CE2A26A 3F9BC316 914D5687 3C0AD668 D2555DCA
+  68C61AA3 00112B2D 563FB09E CCBD105B F407DA6F 8D
+  quit
+!
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree portfast default
+spanning-tree extend system-id
+spanning-tree uplinkfast
+!
+vlan internal allocation policy ascending
+!
+!
+!
+interface Port-channel9
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface GigabitEthernet1/0/1
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/2
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/3
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/4
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/5
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/6
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/7
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/8
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/9
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/10
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/11
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/12
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/13
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/14
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/15
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/16
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/17
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/18
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/19
+ switchport access vlan 112
+ switchport mode access
+!
+interface GigabitEthernet1/0/20
+ switchport access vlan 110
+ switchport mode access
+!
+interface GigabitEthernet1/0/21
+!
+interface GigabitEthernet1/0/22
+!
+interface GigabitEthernet1/0/23
+!
+interface GigabitEthernet1/0/24
+!
+interface GigabitEthernet1/0/25
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 9 mode active
+!
+interface GigabitEthernet1/0/26
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 9 mode active
+!
+interface GigabitEthernet1/0/27
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 9 mode active
+!
+interface GigabitEthernet1/0/28
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 9 mode active
+!
+interface Vlan1
+ ip address 192.168.200.2 255.255.255.0
+!
+interface Vlan110
+ no ip address
+!
+ip default-gateway 192.168.110.10
+ip classless
+ip http server
+ip http secure-server
+!
+snmp-server community solar_read RO
+snmp-server community solar_write RW
+snmp-server enable traps snmp authentication linkdown linkup coldstart warmstart
+snmp-server enable traps transceiver all
+snmp-server enable traps tty
+snmp-server enable traps eigrp
+snmp-server enable traps ospf state-change
+snmp-server enable traps ospf errors
+snmp-server enable traps ospf retransmit
+snmp-server enable traps ospf lsa
+snmp-server enable traps ospf cisco-specific state-change nssa-trans-change
+snmp-server enable traps ospf cisco-specific state-change shamlink interface-old
+snmp-server enable traps ospf cisco-specific state-change shamlink neighbor
+snmp-server enable traps ospf cisco-specific errors
+snmp-server enable traps ospf cisco-specific retransmit
+snmp-server enable traps ospf cisco-specific lsa
+snmp-server enable traps cluster
+snmp-server enable traps fru-ctrl
+snmp-server enable traps entity
+snmp-server enable traps cpu threshold
+snmp-server enable traps power-ethernet group 1-9
+snmp-server enable traps power-ethernet police
+snmp-server enable traps vtp
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps flash insertion removal
+snmp-server enable traps port-security
+snmp-server enable traps auth-framework sec-violation
+snmp-server enable traps dot1x auth-fail-vlan guest-vlan no-auth-fail-vlan no-guest-vlan
+snmp-server enable traps envmon fan shutdown supply temperature status
+snmp-server enable traps stackwise
+snmp-server enable traps license
+snmp-server enable traps event-manager
+snmp-server enable traps cef resource-failure peer-state-change peer-fib-state-change inconsistency
+snmp-server enable traps config-copy
+snmp-server enable traps config
+snmp-server enable traps config-ctid
+snmp-server enable traps hsrp
+snmp-server enable traps ipmulticast
+snmp-server enable traps pim neighbor-change rp-mapping-change invalid-pim-message
+snmp-server enable traps energywise
+snmp-server enable traps vstack
+snmp-server enable traps bridge newroot topologychange
+snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+snmp-server enable traps syslog
+snmp-server enable traps rtr
+snmp-server enable traps mac-notification change move threshold
+snmp-server enable traps vlan-membership
+snmp-server enable traps errdisable
+snmp-server host 192.168.110.18 version 2c solar_trap
+!
+!
+line con 0
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+end

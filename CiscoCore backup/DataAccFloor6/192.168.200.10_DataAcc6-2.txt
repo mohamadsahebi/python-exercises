@@ -1,0 +1,317 @@
+DataAcc6-2#show running-config
+Building configuration...
+
+Current configuration : 7865 bytes
+!
+version 12.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname DataAcc6-2
+!
+boot-start-marker
+boot-end-marker
+!
+enable secret 5 $1$rU90$4Us4teRvQVSluIRhS6.WA.
+!
+username admin password 0 DataAcc6-2_1394@
+no aaa new-model
+system mtu routing 1500
+ip subnet-zero
+!
+ip domain-name DataAcc6-2.local
+!
+!
+crypto pki trustpoint TP-self-signed-370282112
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-370282112
+ revocation-check none
+ rsakeypair TP-self-signed-370282112
+!
+!
+crypto pki certificate chain TP-self-signed-370282112
+ certificate self-signed 01
+  30820251 308201BA A0030201 02020101 300D0609 2A864886 F70D0101 04050030
+  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274
+  69666963 6174652D 33373032 38323131 32301E17 0D393330 33303130 30303231
+  355A170D 32303031 30313030 30303030 5A303031 2E302C06 03550403 1325494F
+  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3337 30323832
+  31313230 819F300D 06092A86 4886F70D 01010105 0003818D 00308189 02818100
+  C8552055 3E2A9A7C F767015C E5741D83 E196B51A 0D5240E8 D1C04DE4 858C321C
+  20CCB128 23480B8D 11972987 6F5419EC 8868F2B0 F9376B32 FCD6443A 42B82D46
+  71984E6B 9BDFD31C A2AD99AA 6FD9ED23 06B4D9B0 CEC737C3 6CB79A8F E7C11C2B
+  B4F1F855 69BFE3D0 A8A7EAE8 8D2F2395 C1664763 C147B47C BE9AEFE6 073D456F
+  02030100 01A37B30 79300F06 03551D13 0101FF04 05300301 01FF3026 0603551D
+  11041F30 1D821B44 61746141 6363362D 322E4461 74614163 63362D32 2E6C6F63
+  616C301F 0603551D 23041830 168014D8 8C9E07B5 AB17B39F 5D570D5A C96FD705
+  CB80E130 1D060355 1D0E0416 0414D88C 9E07B5AB 17B39F5D 570D5AC9 6FD705CB
+  80E1300D 06092A86 4886F70D 01010405 00038181 00B20DBE E99FF5B4 B0BC21C6
+  BA16C965 58BE6353 636A19C7 52B2CD05 FA237AC1 C694969C 6D2C83A6 0A81F51F
+  24F432FB 15E05696 44D762D6 EA0E5F22 36CBA992 005BEE36 FBF49399 6F1D5AA1
+  A4748B59 84F6A441 87F5B3C2 6CC52FDE 893C7CA8 85A4C2C4 191F913C F5718AD4
+  51065B45 0F6D7CDE 13491B99 39A991E9 05DF7E00 91
+  quit
+!
+!
+!
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree portfast default
+spanning-tree extend system-id
+spanning-tree uplinkfast
+!
+vlan internal allocation policy ascending
+!
+!
+!
+interface Port-channel1
+ switchport mode trunk
+!
+interface GigabitEthernet0/1
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/2
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/3
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/4
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/5
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/6
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/7
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/8
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/9
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/10
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/11
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/12
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/13
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/14
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/15
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/16
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/17
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/18
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/19
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/20
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/21
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/22
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/23
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/24
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/25
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/26
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/27
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/28
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/29
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/30
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/31
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/32
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/33
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/34
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/35
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/36
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/37
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/38
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/39
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/40
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/41
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/42
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/43
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/44
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/45
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/46
+ switchport access vlan 106
+ switchport mode access
+!
+interface GigabitEthernet0/47
+ switchport mode trunk
+ channel-group 1 mode active
+!
+interface GigabitEthernet0/48
+ switchport mode trunk
+ channel-group 1 mode active
+!
+interface Vlan1
+ ip address 192.168.200.10 255.255.255.0
+ no ip route-cache
+!
+interface Vlan106
+ no ip address
+ ip helper-address 192.168.110.254
+ no ip route-cache
+!
+ip default-gateway 192.168.106.1
+ip http server
+ip http secure-server
+snmp-server community solar_read RO
+snmp-server community solar_write RW
+snmp-server enable traps snmp authentication linkdown linkup coldstart warmstart
+snmp-server enable traps transceiver all
+snmp-server enable traps tty
+snmp-server enable traps cluster
+snmp-server enable traps entity
+snmp-server enable traps cpu threshold
+snmp-server enable traps vtp
+snmp-server enable traps vlancreate
+snmp-server enable traps vlandelete
+snmp-server enable traps flash insertion removal
+snmp-server enable traps port-security
+snmp-server enable traps envmon fan shutdown supply temperature status
+snmp-server enable traps power-ethernet group 1
+snmp-server enable traps power-ethernet police
+snmp-server enable traps config-copy
+snmp-server enable traps config
+snmp-server enable traps config-ctid
+snmp-server enable traps rtr
+snmp-server enable traps bridge newroot topologychange
+snmp-server enable traps stpx inconsistency root-inconsistency loop-inconsistency
+snmp-server enable traps syslog
+snmp-server enable traps mac-notification change move threshold
+snmp-server enable traps vlan-membership
+snmp-server enable traps errdisable
+snmp-server host 192.168.110.18 version 2c solar_trap
+!
+control-plane
+!
+!
+line con 0
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+end

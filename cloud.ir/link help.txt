@@ -1,0 +1,25 @@
+https://www.howtoforge.com/tutorial/how-to-install-nextcloud-with-nginx-and-php-fpm-on-centos-7/
+https://www.jurisic.org/index.php?post/2017/02/21/How-to-configure-Nextcloud-server-with-LDAP
+https://www.howtoforge.com/tutorial/how-to-install-nextcloud-with-nginx-and-php-fpm-on-centos-7/
+
+
+1-mogheh nasb php harchi mikhad nasb besheh az no php7w basheh 
+
+yum -y install php70w-fpm php70w-cli php70w-gd php70w-mcrypt php70w-mysql php70w-pear php70w-xml php70w-mbstring php70w-pdo
+ php70w-json php70w-pecl-apcu php70w-pecl-apcu-devel
+
+
+baray nasb ldap ham w basheh mesleh php70w-ldap
+
+
+
+2-ageh ip system o avavz kardim ham bayad ip , hamchenin esmeh domain cloud.ir ro beh file config.php ezafeh konim 
+mesl zir dar masir zir /usr/share/nginx/html/nextcloud/config/config.php
+
+'trusted_domains' => 
+  array (
+    0 => 'cloud.ir',
+    1 => '192.168.168.30',
+  ),
+3-selinux baray connect to active bayad disable shavad
+
